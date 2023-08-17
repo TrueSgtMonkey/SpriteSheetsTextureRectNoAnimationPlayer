@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0rite8f2yr18"]
+
+[ext_resource type="Texture2D" uid="uid://dwcruw2qgwaox" path="res://model/charles_big.png" id="1_jsjcu"]
+[ext_resource type="Script" path="res://model/spinning_head.gd" id="2_6ir7w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ak46n"]
+atlas = ExtResource("1_jsjcu")
+region = Rect2(0, 0, 128, 128)
+
+[node name="SpinningHead" type="TextureRect"]
+texture = SubResource("AtlasTexture_ak46n")
+script = ExtResource("2_6ir7w")
+rows = 4
+maxFrame = 10
+
+[node name="Timer" type="Timer" parent="."]

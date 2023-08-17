@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://cip7nyajbyhna"]
+[gd_scene load_steps=2 format=3 uid="uid://cip7nyajbyhna"]
+
+[ext_resource type="PackedScene" uid="uid://b0rite8f2yr18" path="res://model/spinning_head.tscn" id="1_c5gc0"]
 
 [node name="AnimationTest" type="Control"]
 layout_mode = 3
@@ -22,3 +24,6 @@ offset_right = 64.0
 offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="SpinningHead" parent="CenterContainer" instance=ExtResource("1_c5gc0")]
+layout_mode = 2
