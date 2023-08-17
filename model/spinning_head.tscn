@@ -11,6 +11,5 @@ region = Rect2(0, 0, 128, 128)
 texture = SubResource("AtlasTexture_ak46n")
 script = ExtResource("2_6ir7w")
 rows = 4
-maxFrame = 10
 
 [node name="Timer" type="Timer" parent="."]

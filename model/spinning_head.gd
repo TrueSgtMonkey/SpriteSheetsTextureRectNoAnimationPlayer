@@ -31,11 +31,19 @@ func _ready():
   sizeAtlas = atlas.get_size()
 
 func nextFrame():
+  currFrame = (currRow * cols) + currCol
+  print(currFrame)
+  if maxFrame >= 0 && currFrame >= maxFrame:
+    currPos = Vector2.ZERO
+    atlas.region.position = currPos
+    currCol = 0
+    currRow = 0
+    return
+  
   if currCol < cols:
     currPos.x += sizeAtlas.x
     atlas.region.position.x = currPos.x
     currCol += 1
-    currFrame += 1
     
   if currCol >= cols:
     currPos.x = 0
@@ -47,20 +55,9 @@ func nextFrame():
       currPos.y += sizeAtlas.y
       atlas.region.position.y = currPos.y
       currRow += 1
-      currFrame += 1
       
     if currRow >= rows:
       currPos.y = 0
       atlas.region.position.y = 0
       currRow = 0
-      currFrame = 0
-      
-  if maxFrame >= 0 && currFrame >= maxFrame:
-    currPos = Vector2.ZERO
-    atlas.region.position = currPos
-    currCol = 0
-    currRow = 0
-    currFrame = 0
-    
-  print(currFrame)
     
